@@ -1,0 +1,35 @@
+version: "3"
+   
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client/:/usr/app
+      - ./client/node_modules:/usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    networks:
+      - net
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server/:/usr/app
+    ports:
+      - "3001:3001" 
+    networks:
+      - net
+      
+networks:
+  net:
+    driver: bridge
+    
+# Names our volume
+volumes:
+  mysql-db:

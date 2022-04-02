@@ -1,0 +1,85 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.App {
+    height: 100vh;
+    width: 100vw;
+}
+
+.ChartContainer {
+    width: 98vw;
+    height: 25vh;
+    margin: 0 auto;
+    padding: 5px 0px;
+}
+
+.add-button {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+} 
+
+.add-button svg{
+    transform: rotate(0deg);
+    transition: transform 0.35s;
+    transition-timing-function: ease-out;
+}
+.add-button.visible svg{
+    transform: rotate(135deg);
+    transition: transform 0.35s;
+    transition-timing-function: ease-out;
+}
+
+.Cards {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Card {
+    width: 125px;
+    height: 125px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 40px;
+}
+
+.modal {
+    position: absolute;
+    border: 1px solid black;
+    background: white;
+    top: 40%;
+    left: 50%;
+    margin-right: -40%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-button {
+    background: red;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        display: None;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
